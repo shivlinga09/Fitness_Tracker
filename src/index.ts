@@ -71,7 +71,7 @@ function addUserPrompt() {
                 weight: parseFloat(weight),
                 height: parseFloat(height),
               });
-              console.log("✅ User added successfully.");
+              console.log(" User added successfully.");
             } catch (error) {
               if (error instanceof Error) console.error(error.message);
             }
@@ -95,7 +95,7 @@ function logWorkoutPrompt() {
               caloriesBurned: parseInt(calories),
               date: new Date().toISOString(),
             });
-            console.log("✅ Workout logged successfully.");
+            console.log("Workout logged successfully.");
           } catch (error) {
             if (error instanceof Error) console.error(error.message);
           }
@@ -109,7 +109,7 @@ function logWorkoutPrompt() {
 function getAllWorkoutsPrompt() {
   rl.question("Enter User ID: ", (userId) => {
     try {
-      console.log("🏋️ Workouts:", workoutManager.getAllWorkoutsOf(userId));
+      console.log(" Workouts:", workoutManager.getAllWorkoutsOf(userId));
     } catch (error) {
       if (error instanceof Error) console.error(error.message);
     }
@@ -121,7 +121,7 @@ function getWorkoutsByTypePrompt() {
   rl.question("Enter User ID: ", (userId) => {
     rl.question("Enter Workout Type: ", (type) => {
       try {
-        console.log("🏋️ Workouts of Type:", workoutManager.getAllWorkoutsByType(userId, type));
+        console.log(" Workouts of Type:", workoutManager.getAllWorkoutsByType(userId, type));
       } catch (error) {
         if (error instanceof Error) console.error(error.message);
       }
@@ -133,7 +133,7 @@ function getWorkoutsByTypePrompt() {
 function getUserPrompt() {
   rl.question("Enter User ID: ", (id) => {
     try {
-      console.log("👤 User Details:", userManager.getUser(id));
+      console.log(" User Details:", userManager.getUser(id));
     } catch (error) {
       if (error instanceof Error) console.error(error.message);
     }
@@ -153,7 +153,7 @@ function updateUserPrompt() {
             if (height) updatedFields.height = parseFloat(height);
 
             userManager.updateUser(id, updatedFields);
-            console.log("✅ User updated successfully.");
+            console.log(" User updated successfully.");
           } catch (error) {
             if (error instanceof Error) console.error(error.message);
           }
